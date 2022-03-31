@@ -24,8 +24,10 @@ _____________________________________________________
 **SELECT** author, sum(price * amount) as 'Стоимость' from book where title <> 'Идиот' and title <> 'Белая гвардия' group by author having Стоимость > 5000 order by Стоимость desc  
 **SELECT** title, author, amount, price FROM book WHERE author IN (SELECT author FROM book GROUP BY author HAVING SUM(amount) >= 12)  
 <br>
--- Вывести два города, в которых чаще всего были в командировках сотрудники. Вычисляемый столбец назвать Количество:  
-**SELECT** city, count(city) AS Количество FROM trip GROUP BY city ORDER BY Количество DESC LIMIT 2  
+**SELECT** city, count(city) AS Количество FROM trip GROUP BY city ORDER BY Количество DESC LIMIT 2 (Вывести два города, в которых чаще всего были в командировках сотрудники. Вычисляемый столбец назвать Количество)  
+**SELECT** name_genre, title, name_author FROM book INNER JOIN author ON author.author_id = book.author_id INNER JOIN  genre ON genre.genre_id = book.genre_id
+WHERE name_genre = "Роман" ORDER title  
+
 
 
 
